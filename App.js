@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
 
 export default function App() {
   //console.log("App executed");
@@ -8,13 +8,17 @@ export default function App() {
     <View style={styles.container}>
       <Text>Hello World</Text>
       {/* <Image source={require("./assets/favicon.png")} /> */}
-      <Image 
-      // blurRadius={10}
-      fadeDuration={10000}
-      source={ {
-        width: 200,
-        height:300,
-        uri: 'https://picsum.photos/200/300'} } />
+      <TouchableHighlight onPress={() => console.log("Image Pressed")}>
+        <Image 
+        // blurRadius={10}
+        
+        source={ {
+          width: 200,
+          height:300,
+          uri: 'https://picsum.photos/200/300'} } />
+        
+      </TouchableHighlight>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -23,7 +27,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#c5c5c5',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
